@@ -83,12 +83,13 @@ def plot_graph(langs_data):
     colors = ['red', 'green', 'blue']
     for i in range(len(langs_data)):
         (freqs, ranks) = langs_data[i]
-        plt.plot(freqs, ranks, marker='.', linestyle='none', alpha=0.6, color = colors[i])
+        plt.plot(freqs, ranks, marker='o', color = colors[i], ms = 0.07, label = LANGS[i])
 
     plt.xlabel('Ранг, r')
     plt.ylabel('Частота, f')
     plt.title("Закон Ципфа (f*r=c)")
     plt.grid(True)
+    plt.legend()
     plt.show()
 
 def plot_empiric_zipf(word_lengths, freqs):
